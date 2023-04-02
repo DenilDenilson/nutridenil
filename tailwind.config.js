@@ -13,7 +13,11 @@ module.exports = {
       fontFamily: {
         rota: ["Rota", "cursive"],
       },
-      colors: {},
+      colors: {
+        gray: {
+          title: "#273B49",
+        },
+      },
     },
   },
   plugins: [],
