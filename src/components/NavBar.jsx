@@ -1,7 +1,9 @@
+import NutriDenil from "./NutriDenil";
+
 export default function NavBar() {
   return (
     <nav className="flex justify-between">
-      <span>NutriDenil</span>
+      <NutriDenil />
       <span>⭐</span>
     </nav>
   );
