@@ -12,9 +12,16 @@ module.exports = {
     extend: {
       fontFamily: {
         rota: ["Rota", "cursive"],
+        Manrope: ["Manrope", "cursive"],
       },
       colors: {
         gray: {
+          bg: "#FBFDFE",
+          BG_alt: "#F9FAFB",
+          border: "#CCCCCC",
+          lighter: "#B7C0C7",
+          light: "#8E9BA4",
+          text: "#687782",
           title: "#273B49",
         },
       },
