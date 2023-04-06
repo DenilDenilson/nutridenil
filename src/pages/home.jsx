@@ -13,7 +13,14 @@ export default function Home() {
     <div className="h-screen bg-[#FBFDFE]">
       <NavBar />
       <SearchInput />
-      <CarruselPlatos />
+      <CarruselPlatos food={"meat"} title={"Carnes"} />
+      <CarruselPlatos food={"soup"} title={"Sopas"} />
+      <CarruselPlatos food={"dessert"} title={"Postres"} />
+      <CarruselPlatos food={"drink"} title={"Bebidas"} />
+      <CarruselPlatos food={"salad"} title={"Ensaladas"} />
+      <CarruselPlatos food={"juice"} title={"Jugos"} />
+      <CarruselPlatos food={"chicken"} title={"Pollo"} />
+      <CarruselPlatos food={"pasta"} title={"Pastas"} />
     </div>
   );
 }

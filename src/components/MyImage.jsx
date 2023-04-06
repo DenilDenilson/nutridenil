@@ -5,7 +5,8 @@ export default function MyImage(props) {
     <Image
       className="rounded-lg"
       src={props.src}
-      alt=""
+      priority={props.priority}
+      alt={props.alt}
       width={128}
       height={96}
     />
