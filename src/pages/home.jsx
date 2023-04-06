@@ -11,17 +11,19 @@ import SearchInput from "@/components/SearchInput";
 
 export default function Home() {
   return (
-    <div className="h-screen bg-[#FBFDFE]">
-      <NavBar />
-      <SearchInput />
-      <CarruselPlatos food={"meat"} title={"Carnes"} />
-      <CarruselPlatos food={"soup"} title={"Sopas"} />
-      <CarruselPlatos food={"dessert"} title={"Postres"} />
-      <CarruselPlatos food={"drink"} title={"Bebidas"} />
-      <CarruselPlatos food={"salad"} title={"Ensaladas"} />
-      <CarruselPlatos food={"juice"} title={"Jugos"} />
-      <CarruselPlatos food={"chicken"} title={"Pollo"} />
-      <CarruselPlatos food={"pasta"} title={"Pastas"} />
+    <div className="h-screen bg-[#FBFDFE] pl-4">
+      <div className="flex flex-col gap-4">
+        <NavBar />
+        <SearchInput />
+        <CarruselPlatos food={"meat"} title={"Carnes"} />
+        <CarruselPlatos food={"soup"} title={"Sopas"} />
+        <CarruselPlatos food={"dessert"} title={"Postres"} />
+        <CarruselPlatos food={"drink"} title={"Bebidas"} />
+        <CarruselPlatos food={"salad"} title={"Ensaladas"} />
+        <CarruselPlatos food={"juice"} title={"Jugos"} />
+        <CarruselPlatos food={"chicken"} title={"Pollo"} />
+        <CarruselPlatos food={"pasta"} title={"Pastas"} />
+      </div>
       <BotBar />
     </div>
   );

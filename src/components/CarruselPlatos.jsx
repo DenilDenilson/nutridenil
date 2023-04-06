@@ -7,7 +7,7 @@ export default function CarruselPlatos({ food, title }) {
   useEffect(() => {
     function fetchData() {
       fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${food}&number=10&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
+        `https://api.spoonacular.com/recipes/complexSearch?query=${food}&number=5&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
       )
         .then((res) => res.json())
         .then((data) => setRecipes(data.results));
