@@ -1,3 +1,4 @@
+import BotBar from "@/components/BotBar";
 import CarruselPlatos from "@/components/CarruselPlatos";
 import MyImage from "@/components/MyImage";
 import NavBar from "@/components/NavBar";
@@ -21,6 +22,7 @@ export default function Home() {
       <CarruselPlatos food={"juice"} title={"Jugos"} />
       <CarruselPlatos food={"chicken"} title={"Pollo"} />
       <CarruselPlatos food={"pasta"} title={"Pastas"} />
+      <BotBar />
     </div>
   );
 }
