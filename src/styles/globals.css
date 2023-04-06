@@ -41,7 +41,7 @@
   }
 
   .normal-semibold {
-    @apply font-Manrope font-bold text-[16px] leading-[1.4];
+    @apply font-Manrope font-semibold text-[16px] leading-[1.2];
   }
 
   .normal-regular {
