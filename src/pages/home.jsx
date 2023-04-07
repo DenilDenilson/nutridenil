@@ -10,7 +10,6 @@ export default function Home() {
   const [searchClicked, setSearchClicked] = useState(false);
 
   const ActiveSearch = () => {
-    console.log("Holis");
     setStyle("focus:outline-none z-50 focus:shadow-search bigger-regular");
     setSearchClicked(true);
   };
@@ -21,14 +20,14 @@ export default function Home() {
 
   return (
     <div className="h-screen bg-gray-bg" ref={homePage}>
-      {searchClicked && (
+      {/* {searchClicked && (
         <div
           onClick={() => {
             setSearchClicked(false);
           }}
           className="absolute backdrop-blur-[1px] inset-0 z-40"
         ></div>
-      )}
+      )} */}
       <div className="flex flex-col gap-4">
         <div className="px-4 w-full z-30 fixed bg-gray-bg flex flex-col py-2 gap-4">
           <NavBar />
@@ -45,7 +44,9 @@ export default function Home() {
           <CarruselPlatos food={"pasta"} title={"Pastas"} />
         </div>
       </div>
+      {/* <div> */}
       <BotBar />
+      {/* </div> */}
     </div>
   );
 }
