@@ -6,13 +6,13 @@ import SearchInput from "@/components/SearchInput";
 import { useRef, useState } from "react";
 
 export default function Home() {
-  const [style, setStyle] = useState("small-regular");
+  // const [style, setStyle] = useState("small-regular");
   const [searchClicked, setSearchClicked] = useState(false);
 
-  const ActiveSearch = () => {
-    setStyle("focus:outline-none z-50 focus:shadow-search bigger-regular");
-    setSearchClicked(true);
-  };
+  // const ActiveSearch = () => {
+  //   setStyle("focus:outline-none z-50 focus:shadow-search bigger-regular");
+  //   setSearchClicked(true);
+  // };
 
   const homePage = useRef();
 
@@ -31,7 +31,8 @@ export default function Home() {
       <div className="flex flex-col gap-4">
         <div className="px-4 w-full z-30 fixed bg-gray-bg flex flex-col py-2 gap-4">
           <NavBar />
-          <SearchInput ActiveSearch={ActiveSearch} style={style} />
+          {/* <SearchInput ActiveSearch={ActiveSearch} style={style} /> */}
+          <SearchInput />
         </div>
         <div className="pl-4 flex flex-col gap-4 mt-[112px] mb-[68px]">
           <CarruselPlatos food={"meat"} title={"Carnes"} />
