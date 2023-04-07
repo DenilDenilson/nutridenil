@@ -19,7 +19,7 @@ export default function Home() {
   console.log(homePage.current);
 
   return (
-    <div className="h-screen bg-gray-bg" ref={homePage}>
+    <div className="h-screen bg-gray-bg " ref={homePage}>
       {/* {searchClicked && (
         <div
           onClick={() => {
