@@ -19,10 +19,10 @@ export default function CarruselPlatos({ food, title }) {
       <h2 className="normal-semibold text-gray-text mb-1">{title}</h2>
       <div className="flex  overflow-x-scroll overflow-hidden gap-4">
         {true ? (
-          [1, 1, 1, 1, 1].map((recipe) => (
+          [1, 1, 1, 1, 1].map((recipe, index) => (
             // <div key={recipe.id}>
             // <MyImage src={recipe.image} alt={recipe.title} />
-            <MyImage />
+            <MyImage key={index} />
             // </div>
           ))
         ) : (

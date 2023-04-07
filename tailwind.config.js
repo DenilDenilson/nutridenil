@@ -25,6 +25,9 @@ module.exports = {
           title: "#273B49",
         },
       },
+      boxShadow: {
+        search: "0px 4px 8px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],
