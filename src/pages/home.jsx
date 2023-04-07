@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="h-screen bg-gray-bg">
       <div className="flex flex-col gap-4">
-        <div className="px-4 w-full fixed bg-gray-bg flex flex-col  pt-4 gap-4">
+        <div className="px-4 w-full fixed bg-gray-bg flex flex-col py-2 gap-4">
           <NavBar />
           <SearchInput />
         </div>
