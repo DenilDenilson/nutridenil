@@ -12,7 +12,7 @@ const nextConfig = {
   //   ],
   // },
   images: {
-    domains: ["spoonacular.com"],
+    domains: ["spoonacular.com", "th.bing.com"],
   },
 };
 
