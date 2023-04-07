@@ -4,10 +4,12 @@ import IconTrend from "./svg/IconTrend";
 
 export default function BotBar() {
   return (
-    <nav className="flex justify-between h-16 items-center">
+    <nav className="bg-gray-bg border-t-[1px] border-y-gray-text bottom-0 px-4 w-full fixed flex justify-between h-[68px] items-center">
+      {/* <div className="flex w-full items-center justify-between"> */}
       <IconHome />
       <IconTrend />
       <IconBookmark />
+      {/* </div> */}
     </nav>
   );
 }
