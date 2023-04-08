@@ -1,5 +1,6 @@
 import BotBar from "@/components/BotBar";
 import FoodContainer from "@/components/FoodContainer";
+import GoodOrBad from "@/components/GoodOrBad";
 import Layout from "@/components/Layout";
 import MyImage from "@/components/MyImage";
 import NavBar from "@/components/NavBar";
@@ -13,6 +14,7 @@ export default function FoodId() {
         </div>
         <FoodContainer />
       </div>
+      <GoodOrBad />
       <BotBar />
     </div>
   );

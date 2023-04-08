@@ -2,7 +2,7 @@ import MyImage from "./MyImage";
 
 export default function CardFood() {
   return (
-    <section className="h-[128px] grid grid-cols-[156px_minmax(100px,_1fr)] gap-4 pr-4 items-center shadow-lg rounded-lg overflow-hidden">
+    <section className="h-[128px] shadow-cards grid grid-cols-[156px_minmax(100px,_1fr)] gap-4 pr-4 items-center rounded-lg overflow-hidden">
       {/* <MyImage width={156} height={128} className={"rounded-l-lg"} /> */}
       <div className="h-[128px] w-[156px] bg-[url('https://th.bing.com/th/id/OIP.nlb551bP0GCPA8RSAd9TdwHaE6?pid=ImgDet&rs=1')] bg-cover"></div>
       <div className=" flex flex-col gap-2">

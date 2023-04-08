@@ -1,3 +1,9 @@
-export default function FilterText({ filter }) {
-  return <p className="font-Manrope font-semibold text-xs">{filter}</p>;
+export default function FilterText({ filter, className }) {
+  return (
+    <p
+      className={`font-Manrope shadow-filter font-semibold px-2 py-1 rounded-full text-xs ${className}`}
+    >
+      {filter}
+    </p>
+  );
 }

@@ -2,11 +2,11 @@ import IconCalories from "./svg/IconCalories";
 
 export default function Nutrients() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-4 my-4">
       <IconCalories />
       <p className="small-regular text-gray-text">
         <span className="small-semibold text-gray-text">885 Kcal</span>
-        de calorías
+        &nbsp;&nbsp;de calorías
       </p>
     </div>
   );
