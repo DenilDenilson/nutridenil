@@ -22,7 +22,12 @@ export default function CarruselPlatos({ food, title }) {
           [1, 1, 1, 1, 1].map((recipe, index) => (
             // <div key={recipe.id}>
             // <MyImage src={recipe.image} alt={recipe.title} />
-            <MyImage key={index} />
+            <MyImage
+              className={"rounded-lg"}
+              key={index}
+              height={96}
+              width={128}
+            />
             // </div>
           ))
         ) : (
