@@ -71,5 +71,16 @@
   z-index: 100;
 }
 
-#searchInput {
-}
+/* No me deja pasar entre overlays */
+
+/* #overlay-food-container::before {
+  content: "";
+  position: fixed;
+  inset: 0px;
+  background: linear-gradient(
+    to top,
+    #00240f 2%,
+    rgba(0, 0, 0, 0) 20%,
+    transparent
+  );
+} */

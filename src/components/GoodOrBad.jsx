@@ -2,9 +2,9 @@ import IconArrow from "./svg/IconArrow";
 import IconHearth from "./svg/IconHearth";
 import IconSkullNew from "./svg/IconSkullNew";
 
-export default function GoodOrBad() {
+export default function GoodOrBad(props) {
   return (
-    <div className="backdrop-blur-sm fixed mx-auto inset-x-0 bottom-20 flex items-center gap-4 justify-center">
+    <div className="py-2 fixed mx-auto inset-x-0 bottom-[68px] flex items-center gap-4 justify-center">
       <IconArrow className={""} />
       <IconHearth />
       <IconSkullNew />
