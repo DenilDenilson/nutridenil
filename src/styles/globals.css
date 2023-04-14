@@ -61,7 +61,8 @@
 /* Heading 4 */
 @font-face {
   font-family: "Rota";
-  src: url("../pages/rotaFont/Rota-Bold.otf");
+  /* src: url("../pages/rotaFont/Rota-Bold.otf"); */
+  src: url("../styles/rotaFont/Rota-Bold.otf");
 }
 
 /* Complicated designs */
