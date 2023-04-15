@@ -1,10 +1,14 @@
 import MyImage from "./MyImage";
 
-export default function CardFood() {
+export default function CardFood({ id, title, key }) {
+  // const [imagen, setImagen] = useState(
+  //   "https://th.bing.com/th/id/OIP.nlb551bP0GCPA8RSAd9TdwHaE6?pid=ImgDet&rs=1"
+  // );
+
   return (
     <section className="h-[128px] shadow-cards grid grid-cols-[156px_minmax(100px,_1fr)] gap-4 pr-4 items-center rounded-lg overflow-hidden">
       {/* <MyImage width={156} height={128} className={"rounded-l-lg"} /> */}
-      <div className="h-[128px] w-[156px] bg-[url('https://th.bing.com/th/id/OIP.nlb551bP0GCPA8RSAd9TdwHaE6?pid=ImgDet&rs=1')] bg-cover"></div>
+
       <div className=" flex flex-col gap-2">
         <h4 className=" w-full heading4 text-gray-title truncate overflow-hidden border-b-2 border-gray-title">
           Pasta con pollo y Chorizo a la vergaaa

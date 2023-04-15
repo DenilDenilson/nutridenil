@@ -7,10 +7,10 @@ import { createContext, useState } from "react";
 const dataContext = createContext(null);
 
 export default function App({ Component, pageProps }) {
-  const [data, setData] = useState({});
+  const [dataCache, setDataCache] = useState({});
 
   return (
-    <dataContext.Provider value={data}>
+    <dataContext.Provider value={dataCache}>
       <Component {...pageProps} />;
     </dataContext.Provider>
   );
