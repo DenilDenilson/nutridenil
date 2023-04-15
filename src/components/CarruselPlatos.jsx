@@ -1,29 +1,41 @@
 import { useEffect, useState } from "react";
 import MyImage from "./MyImage";
+import Link from "next/link";
 
 export default function CarruselPlatos({ food, title }) {
-  // const [recipes, setRecipes] = useState(null);
+  const [recipes, setRecipes] = useState(null);
 
-  // useEffect(() => {
-  //   function fetchData() {
-  //     fetch(
-  //       `https://api.spoonacular.com/recipes/complexSearch?query=${food}&number=5&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => setRecipes(data.results));
-  //   }
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    function fetchData() {
+      fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?query=${food}&number=5&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
+      )
+        .then((res) => res.json())
+        .then((data) => setRecipes(data.results));
+    }
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <h2 className="normal-semibold text-gray-text mb-1">{title}</h2>
+      <Link href={`search/${food}`}>
+        <h2 className="normal-semibold text-gray-text mb-1">{title}</h2>
+      </Link>
       <div className="flex  overflow-x-scroll overflow-hidden gap-4">
-        {true ? (
-          [1, 1, 1, 1, 1].map((recipe, index) => (
+        {recipes ? (
+          recipes.map((recipe, index) => (
             // <div key={recipe.id}>
             // <MyImage src={recipe.image} alt={recipe.title} />
+            // <MyImage
+            //   className={"rounded-lg"}
+            //   key={index}
+            //   height={96}
+            //   width={128}
+            // />
             <MyImage
               className={"rounded-lg"}
+              src={recipe.image}
+              alt={recipe.title}
               key={index}
               height={96}
               width={128}

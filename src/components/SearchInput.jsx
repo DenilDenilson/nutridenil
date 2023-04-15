@@ -4,8 +4,20 @@ import IconSearch from "./svg/IconSearch";
 /*  */
 const InputWithIcon = () => {
   const inputSearchComponent = useRef(null);
+  const [inputValue, setInputValue] = useState("");
   const [style, setStyle] = useState("small-regular");
   const [divStyle, setDivStyle] = useState("");
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      // inputSearchComponent.current.blur();
+      // console.log(inputValue);
+    }
+  };
 
   const ActiveSearch = () => {
     setStyle("focus:outline-none z-50 focus:shadow-search bigger-regular");
@@ -18,6 +30,8 @@ const InputWithIcon = () => {
     setDivStyle("");
   };
 
+  // console.log(inputValue);
+
   return (
     <div id="searchInput" className={`relative ${divStyle}`}>
       <div className="absolute z-[110] inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
@@ -28,6 +42,9 @@ const InputWithIcon = () => {
         id="searchComponent"
         onFocus={ActiveSearch}
         onBlur={noActiveSearch}
+        onChange={handleChange}
+        onKeyDown={handleKeyPress}
+        value={inputValue}
         type="text"
         placeholder="Ingrese el nombre de su comida"
         className={`min-w-[343px] text-gray-lighter pl-8 pr-3 py-2 rounded-md bg-gray-BG_alt ${style}`}
