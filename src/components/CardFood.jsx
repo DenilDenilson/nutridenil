@@ -1,10 +1,20 @@
 import Image from "next/image";
 import MyImage from "./MyImage";
+import { useEffect, useState } from "react";
 
 export default function CardFood({ id, title, image }) {
-  // const [imagen, setImagen] = useState(
-  //   "https://th.bing.com/th/id/OIP.nlb551bP0GCPA8RSAd9TdwHaE6?pid=ImgDet&rs=1"
-  // );
+  const [mainInfo, setMainInfo] = useState(null);
+
+  useEffect(() => {
+    function fetchData() {
+      fetch(
+        `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
+      )
+        .then((res) => res.json())
+        .then((data) => setMainInfo(data));
+    }
+    fetchData();
+  }, []);
 
   return (
     <section className="h-[128px] shadow-cards grid grid-cols-[156px_minmax(100px,_1fr)] gap-4 pr-4 items-center rounded-lg overflow-hidden">
@@ -25,19 +35,27 @@ export default function CardFood({ id, title, image }) {
         </h4>
         <div>
           <p className="small-regular text-gray-text">
-            <span className="small-semibold text-gray-text">885 Kcal</span>
+            <span className="small-semibold text-gray-text">
+              {mainInfo?.calories} Kcal
+            </span>
           </p>
           <p className="small-regular text-gray-text">
-            <span className="small-semibold text-gray-text">72 g</span> de
-            carbohidrato
+            <span className="small-semibold text-gray-text">
+              {mainInfo?.carbs}
+            </span>{" "}
+            de carbohidrato
           </p>
           <p className="small-regular text-gray-text">
-            <span className="small-semibold text-gray-text">70 g</span> de grasa
-            saturada
+            <span className="small-semibold text-gray-text">
+              {mainInfo?.fat}
+            </span>{" "}
+            de grasa saturada
           </p>
           <p className="small-regular text-gray-text">
-            <span className="small-semibold text-gray-text">20 g</span> de
-            proteína
+            <span className="small-semibold text-gray-text">
+              {mainInfo?.protein}
+            </span>{" "}
+            de proteína
           </p>
         </div>
       </div>
