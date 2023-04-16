@@ -16,20 +16,19 @@ export default function CardsFoodContainer({ title }) {
   }, [title]);
 
   return (
-    <div className="pr-4">
+    <div className="pr-4 mb-4">
       <h2 className="normal-semibold text-gray-light mt-3 mb-4">
         {title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()}
       </h2>
       <div className="flex flex-col gap-4 ">
         {recipes ? (
           recipes.map((recipe) => (
-            // <CardFood
-            //   id={recipe.id}
-            //   key={recipe.id}
-            //   title={recipe.title}
-            //   image={recipe.image}
-            // />
-            <p>Hola</p>
+            <CardFood
+              id={recipe.id}
+              key={recipe.id}
+              title={recipe.title}
+              image={recipe.image}
+            />
           ))
         ) : (
           <h1>Loading...</h1>
