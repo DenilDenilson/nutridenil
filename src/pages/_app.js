@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <dataContext.Provider value={dataCache}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </dataContext.Provider>
   );
 }

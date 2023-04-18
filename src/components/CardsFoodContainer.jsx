@@ -13,6 +13,7 @@ export default function CardsFoodContainer({ title }) {
         .then((data) => setRecipes(data.results));
     }
     fetchData();
+    console.log(recipes);
   }, [title]);
 
   return (
