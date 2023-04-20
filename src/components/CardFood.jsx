@@ -20,7 +20,7 @@ export default function CardFood({ id, title, image }) {
   // Cambio hecho ee
 
   return (
-    <Link>
+    <Link href={`/id/${id}`}>
       <div>Holaaaa</div>
       <p>Link Link</p>
     </Link>
