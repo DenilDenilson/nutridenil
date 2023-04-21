@@ -5,7 +5,7 @@ import GoodOrBad from "./GoodOrBad";
 import MyImage from "./MyImage";
 import Nutrients from "./Nutrients";
 
-export default function FoodContainer() {
+export default function FoodContainer({ allPlato }) {
   return (
     <div className="mx-auto items-center flex flex-col gap-4 mt-[48px] mb-[100px] ">
       <div className="h-[256px] w-full relative overflow-hidden rounded-t-lg before:content-[''] before:absolute before:inset-0  before:z-40 before:bg-gradient-to-t before:from-[#000000E6] before:to-[#00000000]">
@@ -20,7 +20,7 @@ export default function FoodContainer() {
           className={""}
         />
         <h3 className="text-gray-bg absolute bottom-0 z-50 font-rota text-2xl mx-4 mb-2">
-          Pasta con guisantes y salchicha italiana
+          Nombre de la comida
         </h3>
       </div>
 
@@ -36,8 +36,9 @@ export default function FoodContainer() {
           Pasta con guisantes y salchicha italiana
         </h3> */}
         <div className="flex overflow-x-auto snap-x snap-mandatory">
-          <FoodSlaiderContainer />
-          <FoodSlaiderContainer />
+          <FoodSlaiderContainer isgood={true} info={allPlato} />
+          <FoodSlaiderContainer isgood={false} info={allPlato} />
+          {/* {allPlato.calories} */}
         </div>
         <GoodOrBad />
       </div>
