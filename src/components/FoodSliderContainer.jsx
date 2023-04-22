@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FilterText from "./FiltersText";
 import GoodOrBad from "./GoodOrBad";
 import Nutrients from "./Nutrients";
+import IconCalories from "./svg/IconCalories";
 
 export default function FoodSlaiderContainer({ isgood, info }) {
   const [infoPlato, setInfoPlato] = useState(null);
@@ -23,9 +24,15 @@ export default function FoodSlaiderContainer({ isgood, info }) {
       </div>
       {infoPlato ? (
         infoPlato.map((bad) => (
-          <li>
-            {bad.amount} {bad.title}
-          </li>
+          <div className="flex items-center gap-4">
+            <IconCalories />
+            <p className="small-regular text-gray-text">
+              <span className="small-semibold text-gray-text">
+                {bad.amount}
+              </span>
+              &nbsp;&nbsp;{bad.title}
+            </p>
+          </div>
         ))
       ) : (
         <p>Loading . . .</p>
