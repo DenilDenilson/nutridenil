@@ -6,14 +6,13 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function FoodId() {
-  const [plato, setPlato] = useState(["No se conectó a la API"]);
+  const [plato, setPlato] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [image, setImage] = useState(null);
 
   const router = useRouter();
   const pathSegments = router.asPath.split("/");
   const id = pathSegments[pathSegments.length - 1];
-  // if (id === "[id]") {
-  //   id = 0;
-  // }
 
   useEffect(() => {
     function fetchData() {
@@ -25,25 +24,20 @@ export default function FoodId() {
           .then((res) => res.json())
           .then((data) => setPlato(data))
           .catch((err) => console.log(err));
+
+        fetch(
+          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setTitle(data.title);
+            setImage(data.image);
+          })
+          .catch((err) => console.log(err));
       }
     }
     fetchData();
   }, [id]);
-
-  // useEffect(() => {
-  //   function fetchData() {
-  //     fetch(
-  //       "https://api.spoonacular.com/recipes/655055/nutritionWidget.json?apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce"
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => console.log(data))
-  //       .then((data) => setPlato(data))
-  //       .then((data) => console.log(data));
-  //     // .catch((error) => console.log(error)); // maneja los errores de la API
-  //   }
-  //   fetchData();
-  //   // console.log(plato);
-  // }, [id]);
 
   return (
     <div className="h-screen bg-gray-bg ">
@@ -51,9 +45,7 @@ export default function FoodId() {
         <div className="px-4 w-full z-30 fixed bg-gray-bg flex flex-col py-2 gap-4">
           <NavBar />
         </div>
-        {/* <FoodContainer allPlato={plato} /> */}
-        {<p className="absolute top-32">{plato.calories}</p>}
-        {<p className="absolute top-40">{id}</p>}
+        <FoodContainer allPlato={plato} title={title} image={image} />
       </div>
       <BotBar />
     </div>

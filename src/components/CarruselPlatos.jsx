@@ -14,7 +14,7 @@ export default function CarruselPlatos({ food, title }) {
         .then((data) => setRecipes(data.results));
     }
     fetchData();
-  }, [id]);
+  }, []);
 
   return (
     <div>
