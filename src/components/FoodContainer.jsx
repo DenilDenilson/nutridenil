@@ -10,7 +10,7 @@ export default function FoodContainer({ allPlato, title, image }) {
     return <p>Cargando . . .</p>;
   } else {
     return (
-      <div className="mx-auto items-center flex flex-col gap-4 mt-[48px] mb-[100px] ">
+      <div className="min-w-[360px] mx-auto items-center flex flex-col gap-4 mt-[48px] mb-[100px] ">
         <div className="h-[256px] w-full relative overflow-hidden rounded-t-lg before:content-[''] before:absolute before:inset-0  before:z-40 before:bg-gradient-to-t before:from-[#000000E6] before:to-[#00000000]">
           <Image
             alt={title}
@@ -40,8 +40,22 @@ export default function FoodContainer({ allPlato, title, image }) {
           Pasta con guisantes y salchicha italiana
         </h3> */}
           <div className="flex overflow-x-auto snap-x snap-mandatory">
-            <FoodSlaiderContainer isgood={true} info={allPlato} />
-            <FoodSlaiderContainer isgood={false} info={allPlato} />
+            <FoodSlaiderContainer
+              isgood={true}
+              filters={["protein", "vitamin"]}
+              info={allPlato}
+            />
+            <FoodSlaiderContainer
+              isgood={false}
+              filters={[
+                "calories",
+                "fat",
+                "carbohydrates",
+                "sugar",
+                "cholesterol",
+              ]}
+              info={allPlato}
+            />
             {/* {allPlato.calories} */}
           </div>
           <GoodOrBad />
