@@ -24,7 +24,7 @@ export default function CardFood({ id, title, image }) {
   return (
     <>
       {mainInfo ? (
-        <Link href={`/id/5`}>
+        <Link href={`/id/${id}`}>
           <section className="h-[128px] shadow-cards grid grid-cols-[156px_minmax(100px,_1fr)] gap-4 pr-4 items-center rounded-lg overflow-hidden">
             <div className="h-[128px] w-[156px] relative overflow-hidden">
               <Image
@@ -42,24 +42,24 @@ export default function CardFood({ id, title, image }) {
                 {title}
               </h4>
               <div>
-                <p className="small-regular text-gray-text">
+                <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {mainInfo?.calories} Kcal
                   </span>
                 </p>
-                <p className="small-regular text-gray-text">
+                <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {mainInfo?.carbs}
                   </span>{" "}
                   de carbohidrato
                 </p>
-                <p className="small-regular text-gray-text">
+                <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {mainInfo?.fat}
                   </span>{" "}
                   de grasa saturada
                 </p>
-                <p className="small-regular text-gray-text">
+                <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {mainInfo?.protein}
                   </span>{" "}

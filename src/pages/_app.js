@@ -4,13 +4,13 @@ import { createContext, useState } from "react";
 
 // const myFont = localFont({ src: "./rotaFont/Rota-ExtraBold.otf" });
 
-const dataContext = createContext(null);
+export const dataContext = createContext(null);
 
 export default function App({ Component, pageProps }) {
-  const [dataCache, setDataCache] = useState({});
+  const [dataCache, setDataCache] = useState(null);
 
   return (
-    <dataContext.Provider value={dataCache}>
+    <dataContext.Provider value={{ dataCache, setDataCache }}>
       <Component {...pageProps} />
     </dataContext.Provider>
   );

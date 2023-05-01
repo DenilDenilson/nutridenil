@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MyImage from "./MyImage";
 import Link from "next/link";
+import { dataContext } from "../pages/_app";
 
 export default function CarruselPlatos({ food, title }) {
   const [recipes, setRecipes] = useState(null);
+
+  const { dataCache, setDataCache } = useContext(dataContext);
 
   useEffect(() => {
     function fetchData() {
@@ -13,7 +16,16 @@ export default function CarruselPlatos({ food, title }) {
         .then((res) => res.json())
         .then((data) => setRecipes(data.results));
     }
+
+    function saveDataInContext(food, recipes) {
+      setDataCache({
+        ...dataCache,
+        [food]: recipes,
+      });
+    }
     fetchData();
+    saveDataInContext(food, recipes);
+    console.log(dataCache);
   }, []);
 
   return (
