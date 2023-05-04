@@ -36,7 +36,7 @@ export default function FoodSlaiderContainer({ filters, isgood, info }) {
 
   return (
     <div className="relative flex flex-col max-w-[360px] items-center gap-4 min-w-full snap-center">
-      <div className="absolute flex gap-3">
+      {/* <div className="absolute flex gap-3">
         {isgood ? (
           <>
             <FilterText
@@ -64,7 +64,7 @@ export default function FoodSlaiderContainer({ filters, isgood, info }) {
             />
           </>
         )}
-      </div>
+      </div> */}
       <ul className="mt-10 flex flex-col items-center gap-4">{allInfoList}</ul>
     </div>
   );

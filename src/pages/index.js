@@ -1,16 +1,21 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/home");
+  }, []);
+
   return (
     <>
-      <h1 className="text-3xl font-bold underline bg-orange-300 backdrop-blur-sm">
-        Hello world!
+      <h1 className="grid place-content-center min-h-screen text-center">
+        Bienvenido a la nutriApp de DenilDenilson, si leíste esto, vayas vista o
+        vaya conexión para bajita
       </h1>
-      <div class="backdrop-blur-sm bg-white/30 ...">Hola</div>
     </>
   );
 }

@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function NutriDenil() {
   return (
-    <span className="font-rota text-xl leading-6 text-gray-title">
+    <Link href="/home" className="font-rota text-xl leading-6 text-gray-title">
       NutriDenil
-    </span>
+    </Link>
   );
 }

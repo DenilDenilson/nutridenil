@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import MyImage from "./MyImage";
 import Link from "next/link";
 import { dataContext } from "../pages/_app";
+import Image from "next/image";
 
 export default function CarruselPlatos({ food, title }) {
   const [recipes, setRecipes] = useState(null);
@@ -25,7 +26,7 @@ export default function CarruselPlatos({ food, title }) {
     }
     fetchData();
     saveDataInContext(food, recipes);
-    console.log(dataCache);
+    // console.log(dataCache);
   }, []);
 
   return (
@@ -36,23 +37,26 @@ export default function CarruselPlatos({ food, title }) {
       <div className="flex  overflow-x-scroll overflow-hidden gap-4">
         {recipes ? (
           recipes.map((recipe, index) => (
-            // <div key={recipe.id}>
-            // <MyImage src={recipe.image} alt={recipe.title} />
-            // <MyImage
-            //   className={"rounded-lg"}
-            //   key={index}
-            //   height={96}
-            //   width={128}
-            // />
-            <MyImage
-              className={"rounded-lg"}
-              src={recipe.image}
-              alt={recipe.title}
-              key={index}
-              height={96}
-              width={128}
-            />
-            // </div>
+            <Link
+              href={`id/${recipe.id}`}
+              // className="flex  overflow-x-scroll overflow-hidden gap-4"
+            >
+              <div className="h-24 w-32 relative overflow-hidden rounded-lg">
+                <Image
+                  alt={recipe.title}
+                  src={recipe.image}
+                  fill={true}
+                ></Image>
+              </div>
+              {/* <MyImage
+                className={"rounded-lg"}
+                src={recipe.image}
+                alt={recipe.title}
+                key={index}
+                height={96}
+                width={128}
+              /> */}
+            </Link>
           ))
         ) : (
           <p>"Cargando . . ."</p>
