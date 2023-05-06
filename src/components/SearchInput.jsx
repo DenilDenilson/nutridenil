@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import IconSearch from "./svg/IconSearch";
+import { useRouter } from "next/router";
 
 /*  */
 const InputWithIcon = () => {
+  const router = useRouter();
   const inputSearchComponent = useRef(null);
   const [inputValue, setInputValue] = useState("");
   const [style, setStyle] = useState("small-regular");
@@ -16,6 +18,7 @@ const InputWithIcon = () => {
     if (e.key === "Enter") {
       // inputSearchComponent.current.blur();
       // console.log(inputValue);
+      router.push(`/search/${inputValue}`);
     }
   };
 
@@ -34,7 +37,7 @@ const InputWithIcon = () => {
 
   return (
     <div id="searchInput" className={`relative ${divStyle}`}>
-      <div className="absolute z-[110] inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-[110] flex items-center pl-2">
         <IconSearch></IconSearch>
       </div>
       <input
@@ -47,7 +50,7 @@ const InputWithIcon = () => {
         value={inputValue}
         type="text"
         placeholder="Ingrese el nombre de su comida"
-        className={`min-w-[343px] text-gray-lighter pl-8 pr-3 py-2 rounded-md bg-gray-BG_alt ${style}`}
+        className={`min-w-[343px] rounded-md bg-gray-BG_alt py-2 pl-8 pr-3 text-gray-lighter ${style}`}
       />
     </div>
   );

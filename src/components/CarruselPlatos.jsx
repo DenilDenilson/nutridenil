@@ -32,16 +32,17 @@ export default function CarruselPlatos({ food, title }) {
   return (
     <div>
       <Link href={`search/${food}`}>
-        <h2 className="normal-semibold text-gray-text mb-1">{title}</h2>
+        <h2 className="normal-semibold mb-1 text-gray-text">{title}</h2>
       </Link>
-      <div className="flex  overflow-x-scroll overflow-hidden gap-4">
+      <div className="flex  gap-4 overflow-hidden overflow-x-scroll">
         {recipes ? (
           recipes.map((recipe, index) => (
             <Link
+              key={recipe.id}
               href={`id/${recipe.id}`}
               // className="flex  overflow-x-scroll overflow-hidden gap-4"
             >
-              <div className="h-24 w-32 relative overflow-hidden rounded-lg">
+              <div className="relative h-24 w-32 overflow-hidden rounded-lg">
                 <Image
                   alt={recipe.title}
                   src={recipe.image}

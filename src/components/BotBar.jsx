@@ -5,16 +5,16 @@ import IconTrend from "./svg/IconTrend";
 
 export default function BotBar() {
   return (
-    <nav className="bg-gray-bg z-30 border-t-[1px] border-y-gray-text bottom-0 px-4 w-full fixed flex justify-between h-[68px] items-center">
+    <nav className="fixed bottom-0 z-30 flex h-[68px] w-full items-center justify-between border-t-[1px] border-y-gray-text bg-gray-bg px-4">
       {/* <div className="flex w-full items-center justify-between"> */}
-      <Link href="home" className="w-[30%] grid place-content-center">
+      <Link href="/home" className="grid w-[30%] place-content-center">
         <IconHome />
       </Link>
 
-      <Link href="home" className="w-[30%] grid place-content-center">
+      <Link href="/home" className="grid w-[30%] place-content-center">
         <IconTrend />
       </Link>
-      <Link href="home" className="w-[30%] grid place-content-center">
+      <Link href="/home" className="grid w-[30%] place-content-center">
         <IconBookmark />
       </Link>
       {/* </div> */}
