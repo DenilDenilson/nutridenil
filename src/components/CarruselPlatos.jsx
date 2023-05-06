@@ -60,7 +60,7 @@ export default function CarruselPlatos({ food, title }) {
             </Link>
           ))
         ) : (
-          <p>"Cargando . . ."</p>
+          <p>Cargando . . .</p>
         )}
       </div>
     </div>
