@@ -4,7 +4,7 @@ import SearchInput from "@/components/SearchInput";
 
 export default function Layout({ children }) {
   return (
-    <div className="h-screen bg-gray-bg ">
+    <div className="min-h-screen bg-gray-bg max-w-[736px] mx-auto">
       {/* {searchClicked && (
         <div
           onClick={() => {
@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         ></div>
       )} */}
       <div className="flex flex-col gap-4">
-        <div className="px-4 w-full z-30 fixed bg-gray-bg flex flex-col py-2 gap-4">
+        <div className="px-4 w-full max-w-[736px] z-30 fixed bg-gray-bg flex flex-col py-2 gap-4">
           <NavBar />
           {/* <SearchInput ActiveSearch={ActiveSearch} style={style} /> */}
           <SearchInput />

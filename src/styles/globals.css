@@ -71,6 +71,17 @@
   z-index: 100;
 }
 
+#carrusel_platos::-webkit-scrollbar {
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+#carrusel_platos {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 /* No me deja pasar entre overlays */
 
 /* #overlay-food-container::before {

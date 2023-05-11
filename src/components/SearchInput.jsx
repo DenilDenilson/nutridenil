@@ -50,7 +50,7 @@ const InputWithIcon = () => {
         value={inputValue}
         type="text"
         placeholder="Ingrese el nombre de su comida"
-        className={`min-w-[343px] rounded-md bg-gray-BG_alt py-2 pl-8 pr-3 text-gray-lighter ${style}`}
+        className={`min-w-[343px] w-full rounded-md bg-gray-BG_alt py-2 pl-8 pr-3 text-gray-lighter ${style}`}
       />
     </div>
   );

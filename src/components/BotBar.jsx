@@ -5,7 +5,7 @@ import IconTrend from "./svg/IconTrend";
 
 export default function BotBar() {
   return (
-    <nav className="fixed bottom-0 z-30 flex h-[68px] w-full items-center justify-between border-t-[1px] border-y-gray-text bg-gray-bg px-4">
+    <nav className="fixed bottom-0 z-30 flex h-[68px] max-w-[736px] w-full items-center justify-between border-t-[1px] border-y-gray-text bg-gray-bg px-4">
       {/* <div className="flex w-full items-center justify-between"> */}
       <Link href="/home" className="grid w-[30%] place-content-center">
         <IconHome />

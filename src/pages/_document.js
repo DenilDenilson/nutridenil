@@ -9,7 +9,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200"
         />
       </Head>
-      <body>
+      <body className="bg-gray-bg">
         <Main />
         <NextScript />
       </body>

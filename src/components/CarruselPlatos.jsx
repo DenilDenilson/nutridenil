@@ -34,7 +34,7 @@ export default function CarruselPlatos({ food, title }) {
       <Link href={`search/${food}`}>
         <h2 className="normal-semibold mb-1 text-gray-text">{title}</h2>
       </Link>
-      <div className="flex  gap-4 overflow-hidden overflow-x-scroll">
+      <div id="carrusel_platos" className="flex  gap-4 overflow-hidden overflow-x-scroll">
         {recipes ? (
           recipes.map((recipe, index) => (
             <Link
