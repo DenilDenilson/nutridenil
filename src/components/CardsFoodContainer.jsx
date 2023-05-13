@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import CardFood from "./CardFood";
+import CardFoodIngredients from "./CardFoodIngredients";
 
 export default function CardsFoodContainer({ title }) {
   const [recipes, setRecipes] = useState(null);
+  const [ingredients, setIngredients] = useState(null);
 
   useEffect(() => {
     function fetchData() {
@@ -12,7 +14,13 @@ export default function CardsFoodContainer({ title }) {
           `https://api.spoonacular.com/recipes/complexSearch?query=${title}&number=2&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
         )
           .then((res) => res.json())
-          .then((data) => setRecipes(data.results));
+          .then((data) => setRecipes(data.results))
+
+        fetch(
+          `https://api.spoonacular.com/food/ingredients/search?query=${title}&number=5&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
+        )
+        .then(res => res.json())
+        .then(data => setIngredients(data.results))
       }
     }
     fetchData();
@@ -25,6 +33,20 @@ export default function CardsFoodContainer({ title }) {
         {title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()}
       </h2>
       <div className="flex flex-col gap-4 ">
+        {ingredients ? (
+          ingredients.map((ingredient) => (
+            <CardFoodIngredients
+              // id={index}
+              id={ingredient.id}
+              key={ingredient.id}
+              title={ingredient.name}
+              image={ingredient.image}
+            />
+            // <p>{recipe.id}</p>
+          ))
+        ) : (
+          <h1>Loading ingredients...</h1>
+        )}
         {recipes ? (
           recipes.map((recipe) => (
             <CardFood
@@ -37,7 +59,7 @@ export default function CardsFoodContainer({ title }) {
             // <p>{recipe.id}</p>
           ))
         ) : (
-          <h1>Loading...</h1>
+          <h1>Loading recipes...</h1>
         )}
       </div>
     </div>
