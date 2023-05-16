@@ -46,7 +46,11 @@ export default function CardFood({ id, title, image }) {
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {/* {mainInfo?.calories} Kcal */}
-                    N Kcal
+                    {
+                      mainInfo?.nutrition?.nutrients.filter((nutrient) => {
+                        nutrient == 'Calories'
+                      })[0].amount
+                    } Kcal
                   </span>
                 </p>
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">
