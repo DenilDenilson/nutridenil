@@ -47,9 +47,9 @@ export default function CardFood({ id, title, image }) {
                   <span className="small-semibold text-gray-text">
                     {/* {mainInfo?.calories} Kcal */}
                     {
-                      mainInfo?.nutrition?.nutrients.filter((nutrient) => {
-                        nutrient == 'Calories'
-                      })[0].amount
+                      // mainInfo?.nutrition?.nutrients.filter((nutrient) => {
+                      //   nutrient == 'Calories'
+                      // })[0].amount
                     } Kcal
                   </span>
                 </p>
