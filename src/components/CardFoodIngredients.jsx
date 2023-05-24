@@ -50,7 +50,16 @@ export default function CardFood({ id, title, image }) {
                       // mainInfo?.nutrition?.nutrients.filter((nutrient) => {
                       //   nutrient == 'Calories'
                       // })[0].amount
-                    } Kcal
+                    } 
+                    {
+                      (mainInfo) ? 
+                        mainInfo?.nutrition?.nutrients.filter((word) => {
+                          return word.name == 'Calories'
+                        })[0].amount
+                      : 
+                      0
+                    }
+                    &nbsp; Kcal
                   </span>
                 </p>
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">

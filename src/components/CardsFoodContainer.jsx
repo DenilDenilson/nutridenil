@@ -17,7 +17,7 @@ export default function CardsFoodContainer({ title }) {
           .then((data) => setRecipes(data.results))
 
         fetch(
-          `https://api.spoonacular.com/food/ingredients/search?query=${title}&number=5&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
+          `https://api.spoonacular.com/food/ingredients/search?query=${title}&number=2&apiKey=7d5f2d4e10c14a04ae9dbd0a957f70ce`
         )
         .then(res => res.json())
         .then(data => setIngredients(data.results))
