@@ -25,7 +25,7 @@ export default function CardFood({ id, title, image }) {
   return (
     <>
       {mainInfo ? (
-        <Link href={`/id/${id}`}>
+        <Link href={`/ingredients/${id}`}>
           <section className="h-[128px] shadow-cards grid grid-cols-[156px_minmax(100px,_1fr)] gap-4 pr-4 items-center rounded-lg overflow-hidden">
             <div className="h-[128px] w-[156px] relative overflow-hidden">
               <Image
@@ -40,7 +40,7 @@ export default function CardFood({ id, title, image }) {
 
             <div className=" flex flex-col gap-2">
               <h4 className=" w-full heading4 text-gray-title truncate overflow-hidden border-b-2 border-gray-title">
-                {title}
+                {String(title).charAt(0).toUpperCase()  + String(title).slice(1)}
               </h4>
               <div>
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">
