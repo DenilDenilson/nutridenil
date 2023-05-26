@@ -65,21 +65,33 @@ export default function CardFood({ id, title, image }) {
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {/* {mainInfo?.carbs} */}
-                    B
+                    {
+                      mainInfo?.nutrition?.nutrients.filter((word) => {
+                        return word.name == 'Carbohydrates'
+                      })[0].amount
+                    }
                   </span>{" "}
                   de carbohidrato
                 </p>
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {/* {mainInfo?.fat} */}
-                    C
+                    {
+                      mainInfo?.nutrition?.nutrients.filter((word) => {
+                        return word.name == 'Saturated Fat'
+                      })[0].amount
+                    }
                   </span>{" "}
                   de grasa saturada
                 </p>
                 <p className="w-full truncate overflow-hidden small-regular text-gray-text">
                   <span className="small-semibold text-gray-text">
                     {/* {mainInfo?.protein} */}
-                    D
+                    {
+                      mainInfo?.nutrition?.nutrients.filter((word) => {
+                        return word.name == 'Protein'
+                      })[0].amount
+                    }
                   </span>{" "}
                   de proteína
                 </p>
