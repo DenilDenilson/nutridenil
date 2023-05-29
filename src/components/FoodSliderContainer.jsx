@@ -4,15 +4,21 @@ import FilterText from "./FiltersText";
 const short = require("short-uuid");
 
 export default function FoodSlaiderContainer({ filters, isgood, info }) {
-  const [infoPlato, setInfoPlato] = useState(info);
+  const [infoPlato, setInfoPlato] = useState(null);
+
+  useEffect(() => {
+    if (isgood != null) {
+      isgood ? setInfoPlato(info.good) : setInfoPlato(info.bad);
+    }
+  }, [infoPlato]);
 
   const allInfoList = infoPlato ? (
-    infoPlato?.nutrition?.nutrients.map((bad) => (
+    infoPlato.map((bad) => (
       <li key={short.generate()}>
         {/* <IconCalories /> */}
         <p className="small-regular text-gray-text">
-          <span className="small-semibold text-gray-text">{bad.amount}&nbsp;&nbsp;{bad.unit}</span>
-          &nbsp;&nbsp;{bad.name}
+          <span className="small-semibold text-gray-text">{bad.amount}</span>
+          &nbsp;&nbsp;{bad.title}
         </p>
       </li>
     ))
