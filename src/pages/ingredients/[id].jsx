@@ -1,5 +1,5 @@
 import BotBar from "@/components/BotBar";
-import FoodContainer from "@/components/FoodContainer";
+import IngredientContainer from "@/components/IngredientContainer";
 import NavBar from "@/components/NavBar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -32,7 +32,7 @@ export default function IngredientId() {
         <div className="px-4 w-full z-30 fixed bg-gray-bg flex flex-col py-2 gap-4">
           <NavBar />
         </div>
-        <FoodContainer allPlato={mainInfo} title={mainInfo?.original} image={`https://spoonacular.com/cdn/ingredients_500x500/${mainInfo?.image}`} />
+        <IngredientContainer allPlato={mainInfo} title={mainInfo?.original} image={`https://spoonacular.com/cdn/ingredients_500x500/${mainInfo?.image}`} />
       </div>
       <BotBar />
     </div>
