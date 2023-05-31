@@ -8,17 +8,17 @@ export default function FoodSlaiderContainer({ filters, isgood, info }) {
 
   useEffect(() => {
     if (isgood != null) {
-      isgood ? setInfoPlato(info.good) : setInfoPlato(info.bad);
+      isgood ? setInfoPlato(info.nutrition.nutrients) : setInfoPlato(info.nutrition.nutrients);
     }
-  }, [infoPlato]);
+  }, []);
 
   const allInfoList = infoPlato ? (
     infoPlato.map((bad) => (
       <li key={short.generate()}>
         {/* <IconCalories /> */}
         <p className="small-regular text-gray-text">
-          <span className="small-semibold text-gray-text">{bad.amount}</span>
-          &nbsp;&nbsp;{bad.title}
+          <span className="small-semibold text-gray-text">{bad.amount}&nbsp;{bad.unit}</span>
+          &nbsp;&nbsp;{bad.name}
         </p>
       </li>
     ))
