@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FoodSlaiderContainer from "./FoodSliderContainer";
+import IngredientSliderContainer from "./IngredientSliderContainer"
 
 export default function IngredientContainer({ allPlato, title, image }) {
   if (image === null || allPlato === null) {
@@ -36,7 +37,7 @@ export default function IngredientContainer({ allPlato, title, image }) {
           Pasta con guisantes y salchicha italiana
         </h3> */}
           <div className="flex overflow-x-auto snap-x snap-mandatory">
-            <FoodSlaiderContainer
+            <IngredientSliderContainer
               isgood={true}
               filters={["protein", "vitamin"]}
               info={allPlato}

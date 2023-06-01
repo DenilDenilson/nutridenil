@@ -10,7 +10,7 @@ export default function FoodSlaiderContainer({ filters, isgood, info }) {
     if (isgood != null) {
       isgood ? setInfoPlato(info.nutrition.nutrients) : setInfoPlato(info.nutrition.nutrients);
     }
-  }, []);
+  }, [infoPlato]);
 
   const allInfoList = infoPlato ? (
     infoPlato.map((bad) => (
